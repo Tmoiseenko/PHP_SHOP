@@ -1,0 +1,12 @@
+php_value session.name session_id
+php_value error_reporting 32767
+
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteBase /admin/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /admin/index.php?url=$1 [QSA,L]
+
+</IfModule>
